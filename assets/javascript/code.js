@@ -36,15 +36,24 @@ $(document).ready(function(){
         // console.log(results);
         
         for (var i = 0; i < results.length; i++) {
+          var gifRate = $("<figure>");
           var gifImg = $("<img>");
           gifImg.addClass("image");
-          gifImg.attr("src", results[i].images.original_still.url);
-          gifImg.attr("data-animate", results[i].images.original.url);
-          gifImg.attr("data-still", results[i].images.original_still.url);
-          gifImg.attr("data-state", "still");
-          var p = $("<p>").text("Rating: " + results[i].rating);
-          // console.log(gifImg);
-          $('#gif-holder').prepend(gifImg);
+          gifImg.attr('src', results[i].images.original_still.url);
+          gifImg.attr('data-animate', results[i].images.original.url); 
+          gifImg.attr('data-still', results[i].images.original_still.url); 
+          gifImg.attr('rating', results[i].rating); 
+          gifImg.attr('data-state', 'still'); 
+
+          var rating = results[i].rating;
+          var showRating = $('<showRating>');
+          console.log(rating);
+
+          showRating.text('Rated: ', rating);
+          gifRate.append(showRating);
+          gifRate.append(gifImg);
+
+          $('#gif-holder').append(gifImg);
         } //end gifImg get
       }) //end AJAX
     }); //end click function data-get
@@ -55,38 +64,42 @@ $(document).ready(function(){
     event.preventDefault();
     var newGif = $('#search').val();
     gifs.push(newGif);
-    console.log("New Array: ", gifs);
+    // console.log("New Array: ", gifs);
     renderButtons();
   }); //end click event button add
   
-  //TODO: Coding to animate and pause gifs
   
-  $(".gif").on("click", function() {
+  $("#gif-holder").on("click", '.image', function() {
+    // console.log('Clicked');
+
     var state = $(this).attr('data-state');
-    console.log(state);
+    var still = $(this).attr('data-still');
+    var animate = $(this). attr('data-animate');
+    // console.log(state);
     
-    if (state === 'still'){
-      $(this).attr('src', $(this).attr("data-animate"));
-      // $(this).attr("data-state", "animate"); 
+    if (state === 'still') {
+      state = 'animate';
+      // console.log(state);
+      $(this).attr('src', animate); 
+      $(this).attr('data-state', 'animate');
     } else {
-      $(this).attr('src', $(this).attr("data-still"));
-      // $(this).attr("data-state", "still"); 
+      $(this).attr('src', still); 
+      $(this).attr('data-state', 'still');
     }
-  });
+  }); // end animate, pause click function
   
-//FIXME: Make Clear Button Work!!
   //clear button
   $("#clear").on("click", function() {
-    $('.form-group :input').val('');
+    $('.form-group, #search').val('');
   }); // ----- end clear function
-
+ 
   //call functions
   getGifs(); 
   renderButtons();
 }); //end document ready function 
 
-///notes
-//_______________________
+
+//___________TRASH____________
 
   ///image returns
   // result.data.images.original_still.url

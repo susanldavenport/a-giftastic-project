@@ -4,18 +4,62 @@
 }
 
 body {
+  background-image: url(../images/Old-TV-PNG.png);
   width: 1080px;
   margin: 0 auto;
 }
 
 h1{
+  font-size: 60px;
+  font-family: 'Barrio', cursive;
+  padding: 0;
+  margin: 0;
+  color:orange;
   text-align: center;
-  color: green;
 }
 
 button {
-  margin: 3px;
-  padding: 5px;
+  margin: 4px;
+  padding: 6px;
   border-radius: 5px;
+  margin-bottom: 10px;
 
 }
+
+#container{
+  background: palevioletred;
+  padding: 40px;
+  margin-top: 90px;
+  border-radius: 20px;
+}
+
+#button-holder{
+  font-family: 'Bangers', cursive;
+  font-size: 30px;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+#search-holder{
+  font-family: 'Bangers', cursive;
+  font-size: 30px;
+  text-align: right;
+}
+
+#gif-holder{
+  text-align: center;
+  margin-top: 80px;
+}
+
+img {
+  height: 250px;
+  width: 400px;
+  margin: 60px;
+  border-radius: 20px; 
+} 
+
+#submit, #clear {
+  text-align: center;
+}
+
