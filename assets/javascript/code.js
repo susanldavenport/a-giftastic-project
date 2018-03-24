@@ -53,7 +53,8 @@ $(document).ready(function(){
           gifRate.append(showRating);
           gifRate.append(gifImg);
 
-          $('#gif-holder').append(gifImg);
+          $('#gif-holder').prepend(gifImg);
+          // $('#gif-holder').(gifRate);
         } //end gifImg get
       }) //end AJAX
     }); //end click function data-get

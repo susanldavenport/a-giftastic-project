@@ -5,6 +5,10 @@
 
 body {
   background-image: url(../images/Old-TV-PNG.png);
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom; 
   width: 1080px;
   margin: 0 auto;
 }
@@ -28,14 +32,14 @@ button {
 
 #container{
   background: palevioletred;
-  padding: 40px;
-  margin-top: 90px;
+  padding: 20px;
+  margin-top: 10px;
   border-radius: 20px;
 }
 
 #button-holder{
   font-family: 'Bangers', cursive;
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
   margin: 10px;
   padding: 10px;
@@ -43,21 +47,28 @@ button {
 
 #search-holder{
   font-family: 'Bangers', cursive;
-  font-size: 30px;
+  font-size: 45px;
   text-align: right;
 }
 
 #gif-holder{
   text-align: center;
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
 img {
-  height: 250px;
-  width: 400px;
-  margin: 60px;
-  border-radius: 20px; 
+  height: 280px;
+  width: 350px;
+  border-radius: 25px;
+  margin-right: 200px;
+  margin-left:  90px;
+  margin-bottom: 80px;
+  z-index: 1;
 } 
+
+figure{
+  width: 400px;
+}
 
 #submit, #clear {
   text-align: center;
